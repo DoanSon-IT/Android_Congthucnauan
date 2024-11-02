@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_margin="30dp"
+    android:padding="16dp">
+    <!-- Profile Image inside CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_profile_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="60dp"
+
+        >
+        <ImageView
+            android:id="@+id/imgChef"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/avata2"
+            android:scaleType="centerCrop"
+            android:contentDescription="Profile Picture" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:id="@+id/tvChefName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chung Văn"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Số Công Thức"
+            android:textColor="@color/buttonColor"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:cardElevation="8dp"
+            android:backgroundTint="#2196F3"
+            app:cardCornerRadius="35dp"
+            >
+            <TextView
+                android:id="@+id/tvRecipeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="8"
+                android:textColor="@color/backgroundColor"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</LinearLayout>

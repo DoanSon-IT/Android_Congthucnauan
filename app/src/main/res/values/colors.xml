@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- res/values/colors.xml -->
+    <color name="gray">#808080</color>
+
+    <!-- Primary Colors -->
+    <color name="backgroundColor">#F8F8F8</color> <!-- Màu nền chính (xám nhạt) -->
+    <color name="lightBackground">#EEEEEE</color> <!-- Màu nền phụ (xám rất nhạt) -->
+    <color name="accentColor">#FF9800</color> <!-- Màu nhấn (cam sáng) -->
+
+    <!-- Text Colors -->
+    <color name="textPrimary">#212121</color> <!-- Màu chính cho văn bản (đen đậm) -->
+    <color name="textSecondary">#757575</color> <!-- Màu phụ cho văn bản (xám trung tính) -->
+
+    <!-- Button Colors -->
+    <color name="buttonColor">#03A9F4</color> <!-- Màu cho nút bấm (xanh lam nhạt) -->
+
+    <!-- Border Colors -->
+    <color name="borderColor">#E0E0E0</color> <!-- Màu viền (xám nhạt) -->
+
+    <!-- Highlight Color -->
+    <color name="highlightColor">#E91E63</color> <!-- Màu nổi bật (hồng đậm) -->
+
+
+
+    <color name="primaryColor">#6200EE</color>
+        <color name="primaryVariant">#3700B3</color>
+        <color name="secondaryColor">#03DAC6</color>
+        <color name="surfaceColor">#FFFFFF</color>
+        <color name="errorColor">#B00020</color>
+        <color name="onPrimary">#FFFFFF</color>
+        <color name="onSecondary">#000000</color>
+        <color name="purple_500">#6200EE</color>
+        <color name="purple_700">#3700B3</color>
+        <color name="teal_200">#03DAC5</color>
+        <color name="teal_700">#018786</color>
+    </resources>

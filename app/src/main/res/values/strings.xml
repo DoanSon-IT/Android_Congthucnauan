@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Recipe Sharing App</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_add">Add Recipe</string>
+    <string name="nav_profile">Profile</string>
+
+        <!-- Other string resources -->
+        <string name="ingredient_image">Ingredient Image</string>
+
+    <string name="search_hint">Tìm kiếm món ăn</string>
+    <!-- Other strings here -->
+</resources>

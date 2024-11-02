@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/black">
+
+    <!-- Top Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/primaryColor">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/icons_back"
+            android:contentDescription="Back" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnAddRecipe"
+            android:layout_marginLeft="220dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_border"
+            android:text="Lưu"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Recipe Image Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#3E3E3E"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/imgRecipeImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/camera_bg"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="Recipe Image" />
+
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đăng tải hình đại diện món ăn"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+                <EditText
+                    android:id="@+id/etRecipeAuthor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tác giả"
+                    android:inputType="text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/textSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hãy truyền cảm hứng nấu món này đến mọi người!"
+                    android:textSize="14sp"
+                    android:textColor="#B0B0B0"/>
+            </LinearLayout>
+
+            <!-- Recipe Name Input -->
+            <EditText
+                android:id="@+id/etRecipeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Tên món : Món canh bí ngon nhất"
+                android:inputType="text"
+                android:padding="16dp"
+                android:background="@drawable/rounded_border"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Recipe Description Input -->
+            <EditText
+                android:id="@+id/etRecipeDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Hãy chia sẻ với mọi người về món này của bạn nhé..."
+                android:padding="16dp"
+                android:background="@drawable/rounded_border"
+                android:textSize="14sp" />
+
+            <!-- Servings and Cooking Time -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <!-- Servings -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Khẩu phần"
+                        android:textColor="#B0B0B0"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etRecipeServings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2 người"
+                        android:textColor="#B0B0B0"
+                        android:padding="8dp"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Cooking Time -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp" android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thời gian nấu"
+                        android:textSize="16sp"
+                        android:textColor="#B0B0B0"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etRecipeCookTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1 tiếng 30 phút"
+                        android:padding="8dp"
+                        android:textColor="#B0B0B0"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Ingredients Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Nguyên liệu"
+                android:textColor="#B0B0B0"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B0B0B0"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnAddIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="8dp"
+                android:text="+ Nguyên liệu" />
+
+            <!-- Steps Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Cách làm"
+                android:textColor="#B0B0B0"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSteps"
+                android:layout_width="match_parent"
+                android:textColor="#B0B0B0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnAddStep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="+ Thêm bước" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

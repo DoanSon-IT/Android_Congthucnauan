@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:background="@drawable/rounded_border">
+
+    <!-- Ingredient Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:padding="8dp">
+
+        <!-- Left Icon Button -->
+        <ImageButton
+            android:id="@+id/btnLeftIcon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/icons8_menu_30"
+            android:contentDescription="Menu Icon" />
+
+        <!-- Ingredient Name -->
+        <TextView
+            android:id="@+id/tvIngredientName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Tên nguyên liệu"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold|italic" />
+
+        <!-- Right Icon Button -->
+        <ImageButton
+            android:id="@+id/btnRightIcon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/icons8_menu_24"
+            android:contentDescription="Menu Options" />
+    </LinearLayout>
+
+<!--    &lt;!&ndash; Separator Line &ndash;&gt;-->
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:background="@color/black" />-->
+</LinearLayout>

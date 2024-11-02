@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!-- NestedScrollView để chứa cả rvProducts và recyclerView -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+            <!-- Title and Subtitle -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trong tủ lạnh nhà bạn có gì?"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn đến 2 nguyên liệu"
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- GridLayout to display ingredients -->
+            <GridLayout
+                android:id="@+id/glIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="2"
+                android:orientation="horizontal">
+
+                <!-- Dynamically added ingredient buttons will go here -->
+                <!-- New RecyclerView for ingredients -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcPopulerNL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </GridLayout>
+        </LinearLayout>
+            <!-- RecyclerView cho danh sách sản phẩm nằm ngang (rvProducts) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOtherItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <!-- RecyclerView chính (recyclerView) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Món mới nhất "
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="10dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecipes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                 />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

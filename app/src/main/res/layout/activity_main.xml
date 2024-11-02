@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!-- Top Bar with Search -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:padding="8dp">
+        <ImageView
+            android:id="@+id/ivChefIcon"
+            android:layout_width="50dp"
+            android:layout_height="55dp"
+            android:padding="3dp"
+            android:src="@drawable/recipe" />
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/etSearch"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/ivChefIcon"
+            android:background="@drawable/edit_search"
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcSearch"
+        android:layout_marginLeft="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tabCacBanBep"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Các Bạn Bếp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tabKhoCamHung"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Kho Cảm Hứng"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+    <!-- Indicator for Tabs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/tabIndicator"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+
+            android:background="#344AC7" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+
+            android:background="@android:color/transparent"
+            />
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/onPrimary" />
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/gray"
+        android:layout_height="1dp">
+
+    </View>
+
+    <!-- Thanh điều hướng dưới cùng -->
+    <LinearLayout
+        android:id="@+id/nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Home Button"
+            android:scaleType="fitCenter"
+            android:padding="3dp"
+            android:src="@drawable/home_2" />
+
+        <ImageButton
+            android:id="@+id/navSeach"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Search Button"
+            android:scaleType="fitCenter"
+            android:padding="2dp"
+            android:src="@drawable/icons8_search48" />
+
+        <ImageButton
+            android:id="@+id/navAdd"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add Button"
+            android:scaleType="fitCenter"
+            android:padding="2dp"
+            android:src="@drawable/zadd_removebg" />
+        <ImageButton
+            android:id="@+id/navSafari"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add Button"
+            android:scaleType="fitCenter"
+            android:padding="2dp"
+            android:src="@drawable/icons8_safari" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/carnavProfile"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="20dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="10dp">
+            <ImageButton
+                android:id="@+id/navProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/recipe"
+                android:padding="1dp"
+                />
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/navProfile"-->
+            <!--                android:layout_width="25dp"-->
+            <!--                android:layout_height="25dp"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:src="@drawable/avata2" />-->
+        </androidx.cardview.widget.CardView>
+<!--        <ImageButton-->
+<!--            android:id="@+id/navProfile"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:contentDescription="Profile Button"-->
+<!--            android:background="@drawable/rounded_image"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:padding="2dp"-->
+<!--            android:src="@drawable/avata2" />-->
+
+
+
+
+        <!-- Invisible TextView for spacing, if needed -->
+    </LinearLayout>
+
+</LinearLayout>

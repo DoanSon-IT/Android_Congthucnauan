@@ -1,0 +1,189 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="4dp"
+    android:background="@drawable/rounded_border">
+
+    <!-- Khung hình ảnh -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <!-- Hình ảnh món ăn -->
+        <ImageView
+            android:id="@+id/pImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop" />
+
+        <!-- Overlay chứa thông tin tác giả và tiêu đề -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:layout_margin="6dp"
+            android:background="@android:color/transparent">
+
+            <!-- Thông tin tác giả -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Ảnh đại diện tác giả -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_profile_image"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="5dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="16.5dp">
+                    <ImageView
+                        android:id="@+id/pAuthorImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avata2"
+                        android:padding="4dp"
+                        />
+                </androidx.cardview.widget.CardView>
+<!--                <ImageView-->
+<!--                    android:id="@+id/pAuthorImage"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginStart="5dp"-->
+<!--                    android:layout_marginEnd="8dp"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:background="@drawable/rounded_image" />-->
+
+                <!-- Tên tác giả -->
+                <TextView
+                    android:id="@+id/ptvAuthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:text="Quỳnh Nga Trần" />
+            </LinearLayout>
+
+            <!-- Tiêu đề món ăn -->
+            <TextView
+                android:id="@+id/ptvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:textColor="@android:color/white"
+                android:text="Cơm cà ri gà kiểu Nhật" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Nút tương tác (yêu thích và lưu) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+
+        >
+        <!-- Nút yêu thích -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:backgroundTint="#AEB8BD"
+            android:layout_marginLeft="12dp"
+
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+          >
+            <!-- Hình trái tim -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="6dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/ivEmotion"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="1dp"
+                    android:src="@drawable/favorite" />
+            </LinearLayout>
+
+            <!-- Số lượt yêu thích -->
+            <TextView
+                android:id="@+id/tvEmotionCount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="4"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginRight="5dp" />
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Nút lưu -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="25dp"
+
+            android:backgroundTint="#AEB8BD"
+            android:layout_marginLeft="70dp"
+
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Hình biểu tượng lưu -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/btnSave"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:padding="3dp"
+                    android:src="@drawable/save_instagram" />
+            </LinearLayout>
+
+            <!-- Text lưu -->
+            <TextView
+                android:id="@+id/tvSave"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Lưu"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:textSize="14sp" />
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</LinearLayout>

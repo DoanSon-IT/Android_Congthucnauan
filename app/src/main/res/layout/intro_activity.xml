@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/introbackgroud">
+
+
+    <!-- RelativeLayout cho Logo và Text -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <!-- CardView để tạo hình tròn cho ảnh logo -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logoCardView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            app:cardCornerRadius="100dp"
+        app:cardElevation="4dp">
+
+        <!-- Logo của app bên trong CardView -->
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="App Logo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/recipe" />
+
+        </androidx.cardview.widget.CardView>
+
+    <!-- Tiêu đề trang -->
+        <TextView
+            android:id="@+id/introTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logoCardView"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="16dp"
+            android:text="Khám Phá Công Thức Nấu Ăn"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    <!-- Mô tả trang -->
+        <TextView
+            android:id="@+id/introDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/introTitle"
+            android:layout_centerHorizontal="true"
+            android:padding="16dp"
+            android:text="Hàng ngàn công thức nấu ăn ngon đang chờ đợi bạn!"
+            android:textColor="@color/gray"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+</RelativeLayout>
+
+    <!-- Icon chuyển tiếp với hiệu ứng fade-in -->
+<ImageButton
+android:id="@+id/nextIcons"
+android:layout_width="30dp"
+android:layout_height="30dp"
+android:layout_gravity="bottom|center_horizontal"
+android:layout_marginBottom="32dp"
+android:background="@drawable/next" />
+</FrameLayout>

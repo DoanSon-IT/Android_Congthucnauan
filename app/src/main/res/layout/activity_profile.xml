@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <!-- Thanh công cụ trên cùng (Profile, Icons) -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <!-- Ảnh đại diện -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_profile_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="5dp"
+            app:cardElevation="8dp"
+            android:padding="4dp"
+            app:cardCornerRadius="20dp">
+            <ImageButton
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/recipe"
+                android:backgroundTint="@color/white"
+                android:padding="4dp"
+                />
+        </androidx.cardview.widget.CardView>
+<!--        <ImageButton-->
+<!--            android:id="@+id/profile_image"-->
+<!--            android:layout_width="32dp"-->
+<!--            android:layout_height="32dp"-->
+<!--            android:src="@drawable/avata2"-->
+<!--            android:padding="6dp"-->
+<!--            android:background="@drawable/boder_profile"-->
+<!--            android:contentDescription="Profile Picture"-->
+<!--            android:scaleType="fitCenter" />-->
+
+        <!-- Tên người dùng và tên tài khoản -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dev"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/account_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".@cook_2003"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Icon cài đặt, thống kê và menu -->
+        <Button
+            android:id="@+id/btnlog_out"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Statistics"
+            android:background="@drawable/logout"
+            />
+
+        <Button
+            android:id="@+id/settings_icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Settings"
+            android:background="@drawable/icons_setting"/>
+
+        <Button
+            android:id="@+id/menu_icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:contentDescription="Menu"
+            android:background="@drawable/icons_menu"
+             />
+    </LinearLayout>
+    <!-- TabLayout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        app:tabSelectedTextColor="#03A9F4"
+        app:tabTextColor="#000000">
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- ViewPager2 -->
+
+    <!-- Thanh điều hướng dưới cùng -->
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/boder"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Home Button"
+            android:scaleType="fitCenter"
+            android:padding="2dp"
+            android:src="@drawable/home_2" />
+
+        <ImageButton
+            android:id="@+id/navSeach"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Search Button"
+            android:scaleType="fitCenter"
+            android:padding="2dp"
+            android:src="@drawable/icons8_search48" />
+
+        <ImageButton
+            android:id="@+id/navAdd"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add Button"
+            android:scaleType="fitCenter"
+            android:padding="2dp"
+            android:src="@drawable/zadd_removebg" />
+        <ImageButton
+            android:id="@+id/navSafari"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add Button"
+            android:scaleType="fitCenter"
+            android:padding="2dp"
+            android:src="@drawable/icons8_safari" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/carnavProfile"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="20dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="10dp">
+            <ImageButton
+                android:id="@+id/navProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/recipe"
+                android:padding="1dp"
+                />
+<!--            <ImageButton-->
+<!--                android:id="@+id/navProfile"-->
+<!--                android:layout_width="25dp"-->
+<!--                android:layout_height="25dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/avata2" />-->
+        </androidx.cardview.widget.CardView>
+<!--        <ImageButton-->
+<!--            android:id="@+id/navProfile"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:contentDescription="Profile Button"-->
+<!--            android:background="@drawable/rounded_image"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:padding="2dp"-->
+<!--            android:src="@drawable/avata2" />-->
+
+
+
+
+    <!-- Invisible TextView for spacing, if needed -->
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
